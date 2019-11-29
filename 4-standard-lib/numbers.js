@@ -4,15 +4,16 @@
  * - Do not remove any code
  * - Only add or edit code in areas marked with ✏️
  */
-
 describe("numbers", function() {
     "use strict";
-
     describe("Is finite number", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
 
+            function isFiniteNumber(number) {
+                return Number.isFinite(number);
+            }
             ////////////////////////////////////////////////////////////////////////
 
             expect(isFiniteNumber(0)).to.equal(true);
@@ -27,15 +28,12 @@ describe("numbers", function() {
             expect(isFiniteNumber(Infinity)).to.equal(false);
         });
     });
-
     describe("Is not a number", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
             // You will also need to do an additional check here.
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(isNotANumber(0)).to.equal(false);
             expect(isNotANumber(1)).to.equal(false);
             expect(isNotANumber(0xff)).to.equal(false);
@@ -48,89 +46,69 @@ describe("numbers", function() {
             expect(isNotANumber(Infinity)).to.equal(false);
         });
     });
-
     describe("Round number (1/3)", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(roundNumber(0)).to.equal(0);
             expect(roundNumber(0.4)).to.equal(0);
             expect(roundNumber(0.5)).to.equal(1);
             expect(roundNumber(0.6)).to.equal(1);
         });
     });
-
     describe("Round number (2/3)", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(roundNumber(0)).to.equal(0);
             expect(roundNumber(0.4)).to.equal(0);
             expect(roundNumber(0.5)).to.equal(0);
             expect(roundNumber(0.6)).to.equal(0);
         });
     });
-
     describe("Round number (3/3)", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(roundNumber(0)).to.equal(0);
             expect(roundNumber(0.4)).to.equal(1);
             expect(roundNumber(0.5)).to.equal(1);
             expect(roundNumber(0.6)).to.equal(1);
         });
     });
-
     describe("Get smallest number", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(getSmallestNumber([-1])).to.equal(-1);
             expect(getSmallestNumber([-1, 0, 1])).to.equal(-1);
             expect(getSmallestNumber([1, 0, -1])).to.equal(-1);
             expect(getSmallestNumber([])).to.equal(Infinity);
         });
     });
-
     describe("Get biggest number", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(getBiggestNumber([1])).to.equal(1);
             expect(getBiggestNumber([1, 0, -1])).to.equal(1);
             expect(getBiggestNumber([-1, 0, 1])).to.equal(1);
             expect(getBiggestNumber([])).to.equal(-Infinity);
         });
     });
-
     describe("Get random number between 0 and 1", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             const previousNumbers = [];
-
             for (let i = 0; i < 100; i++) {
                 const randomNumber = getRandomNumberBetween0And1();
-
                 expect(randomNumber >= 0).to.equal(true);
                 expect(randomNumber < 1).to.equal(true);
                 expect(previousNumbers).not.to.contain(randomNumber);
@@ -138,20 +116,15 @@ describe("numbers", function() {
             }
         });
     });
-
     describe("Get random number between 10 and 10.1", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
             // You will also need to do some calculations here.
-
             ////////////////////////////////////////////////////////////////////////
-
             const previousNumbers = [];
-
             for (let i = 0; i < 100; i++) {
                 const randomNumber = getRandomNumberBetween10And10Point1();
-
                 expect(randomNumber >= 10).to.equal(true);
                 expect(randomNumber < 10.1).to.equal(true);
                 expect(previousNumbers).not.to.contain(randomNumber);
@@ -159,14 +132,11 @@ describe("numbers", function() {
             }
         });
     });
-
     describe("To integer", function() {
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE. USE THE STANDARD LIB! ✏️
-
             ////////////////////////////////////////////////////////////////////////
-
             expect(toInteger("0")).to.equal(0);
             expect(toInteger("1")).to.equal(1);
             expect(toInteger("0xff")).to.equal(255);
